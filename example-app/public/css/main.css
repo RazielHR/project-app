@@ -3,13 +3,13 @@
 **************************************************/
 
 :root {
-    --dark-bg: #032436;
-    --medium-bg: #113b51;
-    --light-bg: #477187;
-    --extra-light-bg: #6f90a2;
+    --dark-bg: #0a1115;
+    --medium-bg: #304652;
+    --light-bg: #657a85;
+    --extra-light-bg: #8d999f;
     --main-font-color: #ffffff;
-    --income-color: #50948a;
-    --outcome-color: #ad6147;
+    --income-color: #074037;
+    --outcome-color: #5b2412;
 }
 
 body {
@@ -89,7 +89,8 @@ nav.navbar-light {
 nav.navbar-light ul.navbar-nav li a.nav-link:hover,
 nav.navbar-light ul.navbar-nav li a.nav-link.active,
 nav.navbar-light ul.dropdown-menu a.active,
-nav.navbar-light ul.dropdown-menu a:hover {
+nav.navbar-light ul.dropdown-menu a:hover,
+nav.navbar-light ul.dropdown-menu button.dropdown-item:hover {
     background-color: rgba(111,144,162, 0.2);
     color: var(--main-font-color);
 }
@@ -107,7 +108,8 @@ nav.navbar-light button.navbar-toggler,
 nav.navbar-light ul.navbar-nav li a.nav-link:hover,
 nav.navbar-light ul.navbar-nav li a.nav-link:focus,
 nav.navbar-light ul.navbar-nav li a.nav-link,
-nav.navbar-light ul.dropdown-menu a {
+nav.navbar-light ul.dropdown-menu a,
+nav.navbar-light ul.dropdown-menu button.dropdown-item {
     color: var(--main-font-color);
 }
 

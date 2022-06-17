@@ -1,0 +1,9 @@
+.card {
+    background-color: var(--extra-light-bg);
+}
+
+.card form .btn-primary {
+
+    background-color: var(--medium-bg);
+
+}

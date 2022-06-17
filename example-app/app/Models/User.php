@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id'
     ];
 
     /**
@@ -41,4 +42,50 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /********************
+        ASOCIACIONES
+    *********************/
+
+    //Roles N:1
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
+
+    /********************************
+        FUNCIONES DE LA INSTANCIA
+    ********************************/
+
+    //Devuelve el nombre del rol asociado al usuario
+    public function getRoleName(){
+        return $this->role->name;
+    }
+
+    //Indica si el usuario es administrador
+    public function isAdmin(){
+        return ( strtolower($this->getRoleName()) === strtolower("admin") );
+    }
+
+    //Verifica si el usuario tiene el rol pasado como parámetro
+    public function hasRole($role){
+        return ( strtolower($this->getRoleName()) === strtolower($role) );
+    }
+
+    //Verifica si el usuario tiene el privilegio pasado como parámetro
+    public function hasPrivilege($privilege){
+        
+        $privileges = $this->role->privileges;
+
+        foreach($privileges as $priv){
+
+            if( strtolower($priv->name) === strtolower($privilege) ){
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
+
 }

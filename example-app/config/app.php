@@ -82,7 +82,8 @@ return [
     |
     */
 
-    'locale' => 'en',
+    //https://laravel.com/docs/9.x/localization#configuring-the-locale
+    'locale' => env('APP_LANG','es'),
 
     /*
     |--------------------------------------------------------------------------
@@ -124,24 +125,6 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Maintenance Mode Driver
-    |--------------------------------------------------------------------------
-    |
-    | These configuration options determine the driver used to determine and
-    | manage Laravel's "maintenance mode" status. The "cache" driver will
-    | allow maintenance mode to be controlled across multiple machines.
-    |
-    | Supported drivers: "file", "cache"
-    |
-    */
-
-    'maintenance' => [
-        'driver' => 'file',
-        // 'store'  => 'redis',
-    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -194,6 +177,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //Service provider de fortify
+        //https://laravel.com/docs/9.x/providers
+        App\Providers\FortifyServiceProvider::class,
 
     ],
 
